@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Cozy Cafe</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- COFFEE LOADING SCREEN -->
+    <div id="loader">
+        <div class="loader-content">
+            <div class="coffee-cup">☕</div>
+            <h2>The Cozy Cafe</h2>
+            <p>Brewing happiness for you...</p>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>☕ The Cozy Cafe</h1>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="menu.html">Menu</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="#offers">Offers</a>
+            <a href="#reviews">Reviews</a>
+            <a href="contact.html">Contact</a>
+            <a href="cart.html">Cart 🛒</a>
+        </nav>
+
+        <button id="theme-toggle" onclick="toggleDarkMode()">
+            🌙 Dark Mode
+        </button>
+    </header>
+
+    <!-- WELCOME POPUP -->
+<div id="welcome-popup" class="welcome-popup">
+    <div class="welcome-box">
+        <button class="close-popup" onclick="closeWelcomePopup()">×</button>
+
+        <div class="popup-coffee">☕</div>
+        <h2>Hey Coffee Lover!</h2>
+        <p>
+            Welcome to your happy place! 🤎
+            Grab a cup of coffee and enjoy your day.
+        </p>
+
+        <button onclick="closeWelcomePopup()">
+            Let's Explore!
+        </button>
+    </div>
+</div>
+    <!-- HOME BANNER -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to The Cozy Cafe 🤎</h2>
+            <p>Good Coffee, Good Food, Good Mood.</p>
+            <a href="menu.html" class="btn">Explore Our Menu</a>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section>
+        <h2>About Us</h2>
+        <p>
+            Welcome to The Cozy Cafe! A little place filled with
+            happiness, delicious coffee and sweet memories.
+            We believe every cup of coffee tells a story.
+        </p>
+        <a href="about.html" class="btn">Read More</a>
+    </section>
+
+    <!-- POPULAR MENU -->
+    <section>
+        <h2>Our Popular Menu ☕</h2>
+
+        <div class="review-container">
+
+            <div class="review-card">
+                <h3>Cappuccino</h3>
+                <p>Rich coffee with creamy milk.</p>
+                <h3>₹120</h3>
+                <button onclick="addToCart('Cappuccino', 120)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="review-card">
+                <h3>Chocolate Cake</h3>
+                <p>Soft and delicious chocolate cake.</p>
+                <h3>₹150</h3>
+                <button onclick="addToCart('Chocolate Cake', 150)">
+                    Add to Cart
+                </button>
+            </div>
+
+            <div class="review-card">
+                <h3>Iced Coffee</h3>
+                <p>Chilled coffee for a refreshing mood.</p>
+                <h3>₹130</h3>
+                <button onclick="addToCart('Iced Coffee', 130)">
+                    Add to Cart
+                </button>
+            </div>
+
+        </div>
+
+        <a href="menu.html" class="btn">View Full Menu</a>
+    </section>
+
+    <!-- SPECIAL OFFERS -->
+    <section id="offers">
+        <h2>Special Offers 🎉</h2>
+
+        <div class="review-container">
+
+            <div class="review-card">
+                <h3>☕ Coffee Combo</h3>
+                <p>Cappuccino + Chocolate Cake</p>
+                <p><del>₹270</del></p>
+                <h3>₹220</h3>
+                <p>Save ₹50!</p>
+            </div>
+
+            <div class="review-card">
+                <h3>🥤 Iced Coffee Deal</h3>
+                <p>Enjoy our refreshing iced coffee.</p>
+                <p><del>₹130</del></p>
+                <h3>₹110</h3>
+                <p>Save ₹20!</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CUSTOMER REVIEWS -->
+    <section id="reviews">
+        <h2>Customer Reviews ⭐</h2>
+
+        <div id="review-list" class="review-container">
+
+            <div class="review-card">
+                <h3>Priya</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>Amazing coffee and beautiful atmosphere!</p>
+            </div>
+
+            <div class="review-card">
+                <h3>Rahul</h3>
+                <p>⭐⭐⭐⭐⭐</p>
+                <p>My favourite place to relax and enjoy coffee.</p>
+            </div>
+
+            <div class="review-card">
+                <h3>Ananya</h3>
+                <p>⭐⭐⭐⭐</p>
+                <p>Delicious food and lovely service!</p>
+            </div>
+
+        </div>
+
+        <h3>Write Your Review 🤎</h3>
+
+        <form onsubmit="submitReview(event)">
+
+            <input
+                type="text"
+                id="reviewer-name"
+                placeholder="Your Name"
+                required
+            >
+
+            <select id="review-rating" required>
+                <option value="">Select Rating</option>
+                <option value="⭐⭐⭐⭐⭐">5 Stars</option>
+                <option value="⭐⭐⭐⭐">4 Stars</option>
+                <option value="⭐⭐⭐">3 Stars</option>
+                <option value="⭐⭐">2 Stars</option>
+                <option value="⭐">1 Star</option>
+            </select>
+
+            <textarea
+                id="review-message"
+                placeholder="Write your review..."
+                required
+            ></textarea>
+
+            <button type="submit">Submit Review</button>
+
+        </form>
+    </section>
+
+    <!-- CONTACT -->
+    <section>
+        <h2>Visit The Cozy Cafe 🤎</h2>
+        <p>We would love to serve you!</p>
+        <a href="contact.html" class="btn">Contact Us</a>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2026 The Cozy Cafe. All Rights Reserved.</p>
+        <p>Made with 🤎 and coffee.</p>
+    </footer>
+
+    <!-- WHATSAPP BUTTON -->
+    <a
+        href="https://wa.me/918822963844?text=Hello%20The%20Cozy%20Cafe!"
+        class="whatsapp-button"
+        target="_blank"
+        rel="noopener"
+    >
+        💬 WhatsApp Us
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
